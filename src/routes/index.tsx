@@ -79,9 +79,3 @@ function Index() {
     </div>
   );
 }
-      </main>
-      <Footer />
-      <StickyBar />
-    </div>
-  );
-}
