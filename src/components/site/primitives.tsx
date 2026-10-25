@@ -53,7 +53,7 @@ export function Button({ children, variant = "primary", href, className, onClick
 
 export function Eyebrow({ children, number, className }: { children: ReactNode; number?: string | undefined; className?: string }) {
   return (
-    <p className={cn("font-mono text-[12px] uppercase tracking-[0.08em] text-muted-warm", className)}>
+    <p className={cn("font-mono uppercase tracking-[0.08em] text-muted-warm", className)} style={{ fontSize: 12 }}>
       {number && <span>{number} · </span>}
       {children}
     </p>
