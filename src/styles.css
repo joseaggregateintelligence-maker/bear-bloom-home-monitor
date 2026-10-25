@@ -154,3 +154,7 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 50s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } }

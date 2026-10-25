@@ -11,6 +11,9 @@ import { Ages } from "@/components/site/Ages";
 import { AppSection } from "@/components/site/AppSection";
 import { Setup } from "@/components/site/Setup";
 import { Accessories } from "@/components/site/Accessories";
+import { Lifestyle } from "@/components/site/Lifestyle";
+import { Compare } from "@/components/site/Compare";
+import { Privacy } from "@/components/site/Privacy";
 import { Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/")({
@@ -28,7 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 const SECTIONS = [
-  "lifestyle", "compare", "privacy", "pricing", "covered", "faq",
+  "pricing", "covered", "faq",
 ];
 
 function useLenis() {
@@ -58,6 +61,9 @@ function Index() {
         <AppSection />
         <Setup />
         <Accessories />
+        <Lifestyle />
+        <Compare />
+        <Privacy />
         {SECTIONS.map((id, i) => (
           <section
             key={id}
@@ -65,7 +71,7 @@ function Index() {
             className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""}`}
           >
             <div className="container-page">
-              <Eyebrow number={String(i + 10).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
+              <Eyebrow number={String(i + 13).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
                 {id}
               </Eyebrow>
             </div>
