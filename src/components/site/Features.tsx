@@ -68,7 +68,7 @@ export function Features() {
               <img
                 src="/assets/01-hero-front.png"
                 alt="Bear Mini-Mum baby monitor, front view"
-                className="h-[380px] w-auto mix-blend-multiply md:h-[min(620px,76vh)]"
+                className="h-[380px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_65%,transparent_100%)] md:h-[min(620px,76vh)]"
               />
               <div className="absolute bottom-5 left-5 hidden md:block">
                 <AnimatePresence mode="wait">
