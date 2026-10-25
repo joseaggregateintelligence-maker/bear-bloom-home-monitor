@@ -70,19 +70,15 @@ function Index() {
         <Lifestyle />
         <Compare />
         <Privacy />
-        {SECTIONS.map((id, i) => (
-          <section
-            key={id}
-            id={id}
-            className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""}`}
-          >
-            <div className="container-page">
-              <Eyebrow number={String(i + 13).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
-                {id}
-              </Eyebrow>
-            </div>
-          </section>
-        ))}
+        <Pricing />
+        <Covered />
+        <Faq />
+      </main>
+      <Footer />
+      <StickyBar />
+    </div>
+  );
+}
       </main>
       <Footer />
       <StickyBar />
