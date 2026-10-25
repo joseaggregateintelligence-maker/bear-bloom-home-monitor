@@ -48,7 +48,7 @@ export function Hero() {
         <motion.div style={reduce ? undefined : { y: markY }} className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none">
           <motion.p
             aria-hidden
-            className="whitespace-nowrap text-center font-semibold leading-none text-[#D8C9B3]"
+            className="whitespace-nowrap text-center font-semibold leading-none text-watermark"
             style={{ fontSize: "22vw" }}
             initial={init({ y: "14%", letterSpacing: "-0.02em", opacity: 0 })}
             animate={{ y: "0%", letterSpacing: "-0.06em", opacity: 1 }}
