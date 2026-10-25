@@ -47,7 +47,7 @@ export function StickyBar() {
               <img src="/assets/02-hero-three-quarter.png" alt="" className="h-10 w-10 shrink-0 rounded-[10px] bg-linen object-cover" loading="lazy" />
               <span className="truncate text-[15px] md:shrink-0 md:text-[14px] font-[550] text-ink">Bear Mini-Mum</span>
             </div>
-            <Button className="h-10 whitespace-nowrap px-4 md:order-last md:px-3.5" onClick={() => scrollToId("pricing")}>
+            <Button className="h-10 whitespace-nowrap px-4 md:order-last" onClick={() => scrollToId("pricing")}>
               Order · ${plan.price}
             </Button>
             <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] md:ml-auto md:shrink-0 md:overflow-visible">
