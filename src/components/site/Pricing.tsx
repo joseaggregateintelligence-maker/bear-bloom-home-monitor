@@ -73,7 +73,7 @@ export function Pricing() {
               <img
                 src="/assets/20-in-the-box-flat-lay.png"
                 alt="Flat lay of everything in the box: the bear, its base, wall plate and cable"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain mix-blend-multiply"
                 loading="lazy"
               />
               <figcaption className="glass absolute left-4 top-4 rounded-full px-3.5 py-2 font-mono uppercase tracking-[0.08em] text-ink" style={{ fontSize: 12 }}>

@@ -36,7 +36,7 @@ export function Footer() {
 
         <div className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-1">
-            <img src="/assets/logo-horizontal-night.png" alt="Bear Mini-Mum" className="h-8 w-auto mix-blend-lighten" loading="lazy" />
+            <img src="/assets/logo-horizontal-night-transparent.png" alt="Bear Mini-Mum" className="h-10 w-auto" loading="lazy" />
           </div>
           {COLS.map((c) => (
             <div key={c.title} className="border-t border-cream/10 pt-5">

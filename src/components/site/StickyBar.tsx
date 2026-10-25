@@ -42,12 +42,12 @@ export function StickyBar() {
           exit={reduce ? { opacity: 0 } : { y: 120, opacity: 0 }}
           transition={{ duration: reduce ? 0 : 0.6, ease: EASE }}
         >
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2.5 md:flex">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2.5 md:flex md:gap-2">
             <div className="flex min-w-0 items-center gap-2.5">
               <img src="/assets/02-hero-three-quarter.png" alt="" className="h-10 w-10 shrink-0 rounded-[10px] bg-linen object-cover" loading="lazy" />
-              <span className="truncate text-[15px] font-[550] text-ink">Bear Mini-Mum</span>
+              <span className="truncate text-[15px] md:shrink-0 md:text-[14px] font-[550] text-ink">Bear Mini-Mum</span>
             </div>
-            <Button className="h-10 px-4 md:order-last" onClick={() => scrollToId("pricing")}>
+            <Button className="h-10 whitespace-nowrap px-4 md:order-last md:px-3.5" onClick={() => scrollToId("pricing")}>
               Order · ${plan.price}
             </Button>
             <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] md:ml-auto">
@@ -57,7 +57,7 @@ export function StickyBar() {
                   role="radio"
                   aria-checked={sel === p.id}
                   onClick={() => setSel(p.id)}
-                  className={`h-9 shrink-0 whitespace-nowrap rounded-full px-3 text-[13px] transition-colors duration-500 ${sel === p.id ? "bg-cocoa text-cream" : "border border-hairline text-ink"}`}
+                  className={`h-9 shrink-0 whitespace-nowrap rounded-full px-3 text-[13px] md:h-8 md:px-2.5 md:text-[12px] transition-colors duration-500 ${sel === p.id ? "bg-cocoa text-cream" : "border border-hairline text-ink"}`}
                 >
                   {p.name} ${p.price}
                 </button>
