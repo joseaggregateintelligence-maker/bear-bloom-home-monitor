@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform, type TargetAndTransition } from "framer-motion";
 import { Button, EASE, Eyebrow } from "./primitives";
 import { scrollToId } from "./Nav";
 
@@ -17,7 +17,7 @@ export function Hero() {
   const productScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const markY = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
-  const init = (v: object) => (reduce ? false : v);
+  const init = <T extends TargetAndTransition>(v: T): T | false => (reduce ? false : v);
 
   return (
     <section
@@ -45,7 +45,7 @@ export function Hero() {
 
       {/* Watermark + product */}
       <div className="relative flex flex-1 items-center justify-center pt-24 md:pt-0">
-        <motion.div style={reduce ? undefined : { y: markY }} className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none">
+        <motion.div style={reduce ? {} : { y: markY }} className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none">
           <motion.p
             aria-hidden
             className="whitespace-nowrap text-center font-semibold leading-none text-watermark"
@@ -57,7 +57,7 @@ export function Hero() {
             Mini-Mum
           </motion.p>
         </motion.div>
-        <motion.div style={reduce ? undefined : { scale: productScale }} className="relative">
+        <motion.div style={reduce ? {} : { scale: productScale }} className="relative">
           <motion.video
             src="/assets/09-turntable-360.mp4"
             poster="/assets/02-hero-three-quarter.png"
