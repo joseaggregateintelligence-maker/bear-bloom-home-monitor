@@ -63,7 +63,7 @@ export function Features() {
     <section id="features" className="bg-cream pb-[88px] md:pb-0">
       <div className="container-page grid gap-0 md:grid-cols-2 md:gap-16">
         <div className="md:order-2">
-          <div className="pt-[88px] md:sticky md:top-0 md:flex md:h-screen md:items-center md:pt-0">
+          <div className="pt-[88px] md:sticky md:top-0 motion-reduce:md:static md:flex md:h-screen md:items-center md:pt-0">
             <div className="relative flex w-full items-center justify-center overflow-hidden rounded-[28px] bg-linen md:h-[min(720px,86vh)]">
               <img
                 src="/assets/01-hero-front.png"

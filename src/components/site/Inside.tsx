@@ -1,9 +1,12 @@
+import { useOffscreenPause } from "@/hooks/use-offscreen-pause";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll } from "framer-motion";
 import { Eyebrow, Reveal } from "./primitives";
 
 export function Inside() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useOffscreenPause(videoRef);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
   return (
@@ -22,6 +25,8 @@ export function Inside() {
             muted
             loop
             playsInline
+            preload="metadata"
+            ref={videoRef}
             aria-label="Exploded view of the nine parts inside Bear Mini-Mum"
             className="w-full rounded-[28px]"
           />
