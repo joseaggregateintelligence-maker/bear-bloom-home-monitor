@@ -11,7 +11,13 @@ const STEPS = [
 function Card({ s, className }: { s: (typeof STEPS)[number]; className?: string | undefined }) {
   return (
     <div className={"relative h-full w-full overflow-hidden rounded-[28px] bg-linen " + (className ?? "")}>
-      <img src={s.img} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+      {s.img.includes("/app-") ? (
+        <div className="absolute left-1/2 top-10 w-[200px] -translate-x-1/2 rounded-[40px] bg-ink p-2">
+          <img src={s.img} alt="" className="w-full rounded-[32px]" loading="lazy" />
+        </div>
+      ) : (
+        <img src={s.img} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+      )}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-midnight/80 via-midnight/40 to-transparent p-6 pt-24">
         <span className="glass inline-flex h-8 items-center rounded-full px-3.5 font-mono uppercase tracking-[0.08em] text-ink" style={{ fontSize: 12 }}>
           {s.n}
