@@ -1,3 +1,4 @@
+import { useOffscreenPause } from "@/hooks/use-offscreen-pause";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type TargetAndTransition } from "framer-motion";
 import { Button, EASE, Eyebrow } from "./primitives";
@@ -12,6 +13,8 @@ const SPECS = [
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useOffscreenPause(videoRef);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const productScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
@@ -37,7 +40,7 @@ export function Hero() {
           {SPECS.map((s) => (
             <li key={s.label}>
               <p className="text-[28px] font-[520] leading-none tracking-[-0.035em] text-ink">{s.value}</p>
-              <p className="text-label mt-2 text-muted-warm">{s.label}</p>
+              <p className="text-label mt-2 text-cocoa">{s.label}</p>
             </li>
           ))}
         </ul>
@@ -65,6 +68,8 @@ export function Hero() {
             muted
             loop
             playsInline
+            preload="metadata"
+            ref={videoRef}
             aria-label="Bear Mini-Mum baby monitor turning 360 degrees"
             className="h-[360px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)] md:h-[560px]"
             initial={init({ y: "7%", scale: 0.94, opacity: 0 })}

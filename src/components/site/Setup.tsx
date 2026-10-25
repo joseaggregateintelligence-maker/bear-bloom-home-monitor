@@ -13,10 +13,10 @@ function Card({ s, className }: { s: (typeof STEPS)[number]; className?: string 
     <div className={"relative h-full w-full overflow-hidden rounded-[28px] bg-linen " + (className ?? "")}>
       {s.img.includes("/app-") ? (
         <div className="absolute left-1/2 top-10 w-[200px] -translate-x-1/2 rounded-[40px] bg-ink p-2">
-          <img src={s.img} alt="" className="w-full rounded-[32px]" loading="lazy" />
+          <img src={s.img} alt={s.title} className="w-full rounded-[32px]" loading="lazy" />
         </div>
       ) : (
-        <img src={s.img} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <img src={s.img} alt={s.title} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
       )}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-midnight/80 via-midnight/40 to-transparent p-6 pt-24">
         <span className="glass inline-flex h-8 items-center rounded-full px-3.5 font-mono uppercase tracking-[0.08em] text-ink" style={{ fontSize: 12 }}>
@@ -39,7 +39,7 @@ export function Setup() {
   return (
     <section id="setup" className="bg-cream">
       {/* Desktop pinned deck */}
-      <div ref={ref} className="relative hidden md:block" style={{ height: "calc(2400px + 100vh)" }}>
+      <div ref={ref} className={reduce ? "hidden" : "relative hidden md:block"} style={{ height: "calc(2400px + 100vh)" }}>
         <div className="sticky top-0 flex h-screen items-center">
           <div className="container-page grid grid-cols-2 items-center gap-16">
             <div>

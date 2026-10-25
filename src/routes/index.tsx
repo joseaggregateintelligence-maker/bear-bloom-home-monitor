@@ -14,25 +14,31 @@ import { Accessories } from "@/components/site/Accessories";
 import { Lifestyle } from "@/components/site/Lifestyle";
 import { Compare } from "@/components/site/Compare";
 import { Privacy } from "@/components/site/Privacy";
-import { Eyebrow } from "@/components/site/primitives";
+import { Pricing } from "@/components/site/Pricing";
+import { Covered } from "@/components/site/Covered";
+import { Faq } from "@/components/site/Faq";
+import { Footer } from "@/components/site/Footer";
+import { StickyBar } from "@/components/site/StickyBar";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Bear Mini-Mum — Smart baby monitor for ages 0–3" },
-      { name: "description", content: "Bear Mini-Mum is a small bear-shaped smart baby monitor with on-device AI, private video and free safety alerts for life." },
-      { property: "og:title", content: "Bear Mini-Mum — Smart baby monitor for ages 0–3" },
-      { property: "og:description", content: "A small bear-shaped smart baby monitor with on-device AI, private video and free safety alerts for life." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => {
+    const img = loaderData ? `${loaderData.origin}/assets/og-image.jpg` : undefined;
+    return {
+      meta: [
+        { title: "Bear Mini-Mum · The baby monitor that grows up with them" },
+        { name: "description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert free for life." },
+        { property: "og:title", content: "Bear Mini-Mum · The baby monitor that grows up with them" },
+        { property: "og:description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert free for life." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        ...(img ? [{ property: "og:image", content: img }, { name: "twitter:image", content: img }] : []),
+      ],
+    };
+  },
   component: Index,
 });
-
-const SECTIONS = [
-  "pricing", "covered", "faq",
-];
 
 function useLenis() {
   useEffect(() => {
@@ -64,25 +70,12 @@ function Index() {
         <Lifestyle />
         <Compare />
         <Privacy />
-        {SECTIONS.map((id, i) => (
-          <section
-            key={id}
-            id={id}
-            className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""}`}
-          >
-            <div className="container-page">
-              <Eyebrow number={String(i + 13).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
-                {id}
-              </Eyebrow>
-            </div>
-          </section>
-        ))}
+        <Pricing />
+        <Covered />
+        <Faq />
       </main>
-      <footer id="footer" className="section-pad">
-        <div className="container-page">
-          <Eyebrow number="16">footer</Eyebrow>
-        </div>
-      </footer>
+      <Footer />
+      <StickyBar />
     </div>
   );
 }

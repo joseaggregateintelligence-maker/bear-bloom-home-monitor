@@ -55,7 +55,7 @@ export function Accessories() {
                 <h3 className="text-[21px] font-[520] tracking-[-0.02em] text-ink">{it.name}</h3>
                 <span className="font-mono uppercase tracking-[0.08em] text-cocoa" style={{ fontSize: 12 }}>{it.price}</span>
               </div>
-              <p className="mt-1.5 text-[16px] leading-[1.5] text-muted-warm">{it.text}</p>
+              <p className="mt-1.5 text-[16px] leading-[1.5] text-cocoa">{it.text}</p>
             </div>
           </article>
         ))}

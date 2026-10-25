@@ -63,7 +63,7 @@ export function Ages() {
     <section id="ages" className="bg-cream">
       {/* Desktop */}
       <div className="container-page hidden grid-cols-[1.15fr_1fr] gap-16 md:grid">
-        <div className="sticky top-0 flex h-screen flex-col justify-center pt-24 pb-10">
+        <div className="sticky top-0 motion-reduce:static flex h-screen flex-col justify-center pt-24 pb-10">
           {heading}
           <div className="relative mt-10 aspect-[10/7] w-full overflow-hidden rounded-[28px] bg-linen">
             <AnimatePresence initial={false}>
