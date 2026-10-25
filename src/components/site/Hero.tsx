@@ -66,7 +66,7 @@ export function Hero() {
             loop
             playsInline
             aria-label="Bear Mini-Mum baby monitor turning 360 degrees"
-            className="h-[360px] w-auto mix-blend-multiply md:h-[560px]"
+            className="h-[360px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)] md:h-[560px]"
             initial={init({ y: "7%", scale: 0.94, opacity: 0 })}
             animate={{ y: "0%", scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: EASE, delay: 0.2 }}
