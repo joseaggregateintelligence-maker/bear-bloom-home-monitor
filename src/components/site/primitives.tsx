@@ -6,11 +6,11 @@ export const EASE = [0.16, 1, 0.3, 1] as const;
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary";
-  href?: string;
-  className?: string;
-  onClick?: () => void;
-  arrow?: boolean;
+  variant?: "primary" | "secondary" | undefined;
+  href?: string | undefined;
+  className?: string | undefined;
+  onClick?: () => void | undefined;
+  arrow?: boolean | undefined;
 };
 
 export function Button({ children, variant = "primary", href, className, onClick, arrow = true }: ButtonProps) {
@@ -51,7 +51,7 @@ export function Button({ children, variant = "primary", href, className, onClick
   );
 }
 
-export function Eyebrow({ children, number, className }: { children: ReactNode; number?: string; className?: string }) {
+export function Eyebrow({ children, number, className }: { children: ReactNode; number?: string | undefined; className?: string }) {
   return (
     <p className={cn("text-label text-muted-warm", className)}>
       {number && <span>{number} · </span>}
@@ -67,9 +67,9 @@ export function Reveal({
   stagger,
 }: {
   children: ReactNode;
-  className?: string;
-  delay?: number;
-  stagger?: number;
+  className?: string | undefined;
+  delay?: number | undefined;
+  stagger?: number | undefined;
 }) {
   const reduce = useReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;
@@ -118,12 +118,12 @@ export function SectionHeading({
   className,
   align = "left",
 }: {
-  eyebrow?: string;
-  number?: string;
+  eyebrow?: string | undefined;
+  number?: string | undefined;
   heading: ReactNode;
-  lead?: ReactNode;
-  className?: string;
-  align?: "left" | "center";
+  lead?: ReactNode | undefined;
+  className?: string | undefined;
+  align?: "left" | "center" | undefined;
 }) {
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
