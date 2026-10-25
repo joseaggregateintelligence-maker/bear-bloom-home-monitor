@@ -36,7 +36,7 @@ export function StickyBar() {
         <motion.div
           role="region"
           aria-label="Quick order"
-          className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-[600px] rounded-[16px] border border-hairline bg-card-warm p-2.5 md:bottom-4"
+          className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-[600px] lg:max-w-[640px] rounded-[16px] border border-hairline bg-card-warm p-2.5 md:bottom-4"
           initial={reduce ? { opacity: 0 } : { y: 120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={reduce ? { opacity: 0 } : { y: 120, opacity: 0 }}
@@ -50,7 +50,7 @@ export function StickyBar() {
             <Button className="h-10 whitespace-nowrap px-4 md:order-last md:px-3.5" onClick={() => scrollToId("pricing")}>
               Order · ${plan.price}
             </Button>
-            <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] md:ml-auto">
+            <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] md:ml-auto md:shrink-0 md:overflow-visible">
               {PLANS.map((p) => (
                 <button
                   key={p.id}
