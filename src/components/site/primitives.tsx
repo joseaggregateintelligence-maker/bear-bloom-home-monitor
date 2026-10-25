@@ -53,7 +53,7 @@ export function Button({ children, variant = "primary", href, className, onClick
 
 export function Eyebrow({ children, number, className }: { children: ReactNode; number?: string | undefined; className?: string }) {
   return (
-    <p className={cn("text-label text-muted-warm", className)}>
+    <p className={cn("font-mono uppercase tracking-[0.08em] text-muted-warm", className)} style={{ fontSize: 12 }}>
       {number && <span>{number} · </span>}
       {children}
     </p>
@@ -81,7 +81,7 @@ export function Reveal({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-10% 0px" }}
-        variants={{ show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
+        variants={{ show: { transition: { staggerChildren: stagger ?? 0, delayChildren: delay } } }}
       >
         {items.map((c, i) => (
           <motion.div

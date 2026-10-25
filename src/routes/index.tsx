@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
 import { Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/")({
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/")({
 });
 
 const SECTIONS = [
-  "hero", "statement", "features", "daynight", "inside", "ages", "app", "setup",
+  "statement", "features", "daynight", "inside", "ages", "app", "setup",
   "accessories", "lifestyle", "compare", "privacy", "pricing", "covered", "faq",
 ];
 
@@ -41,14 +42,15 @@ function Index() {
     <div className="min-h-screen bg-cream text-ink">
       <Nav />
       <main>
+        <Hero />
         {SECTIONS.map((id, i) => (
           <section
             key={id}
             id={id}
-            className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""} ${id === "hero" ? "min-h-screen pt-40" : ""}`}
+            className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""}`}
           >
             <div className="container-page">
-              <Eyebrow number={String(i + 1).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
+              <Eyebrow number={String(i + 2).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
                 {id}
               </Eyebrow>
             </div>

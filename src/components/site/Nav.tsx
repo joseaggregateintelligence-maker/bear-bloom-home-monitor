@@ -89,7 +89,7 @@ export function Nav() {
             className="fixed inset-0 z-40 flex flex-col bg-cream px-5 pb-10 pt-28 lg:hidden"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={reduce ? undefined : { opacity: 0 }}
+            exit={reduce ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
           >
             <ul className="flex flex-col">
