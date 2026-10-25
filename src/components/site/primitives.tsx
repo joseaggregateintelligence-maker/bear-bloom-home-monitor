@@ -81,7 +81,7 @@ export function Reveal({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-10% 0px" }}
-        variants={{ show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
+        variants={{ show: { transition: { staggerChildren: stagger ?? 0, delayChildren: delay } } }}
       >
         {items.map((c, i) => (
           <motion.div
