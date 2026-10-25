@@ -36,7 +36,7 @@ export function DayNight() {
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <Eyebrow className={night ? "text-glow" : ""}>Day and night</Eyebrow>
-          <h2 className={cn("text-section mt-5 transition-colors duration-700", night ? "text-cream" : "text-ink")}>
+          <h2 className={"text-section mt-5 transition-colors duration-700 " + (night ? "text-cream" : "text-ink")}>
             Bright by day. Invisible by night.
           </h2>
         </Reveal>
@@ -54,7 +54,7 @@ export function DayNight() {
               key={mode}
               src={m.img}
               alt={m.alt}
-              className="absolute inset-0 h-full w-full object-contain"
+              className="absolute inset-0 h-full w-full object-contain [mask-image:linear-gradient(90deg,transparent_18%,black_32%,black_68%,transparent_82%)] md:[mask-image:linear-gradient(90deg,transparent_24%,black_34%,black_66%,transparent_76%)]"
               initial={reduce ? false : { opacity: 0, scale: 1.06 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={reduce ? { opacity: 0 } : { opacity: 0 }}
