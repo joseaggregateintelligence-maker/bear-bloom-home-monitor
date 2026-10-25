@@ -5,6 +5,9 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Statement } from "@/components/site/Statement";
 import { Features } from "@/components/site/Features";
+import { DayNight } from "@/components/site/DayNight";
+import { Inside } from "@/components/site/Inside";
+import { Ages } from "@/components/site/Ages";
 import { Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/")({
@@ -22,7 +25,7 @@ export const Route = createFileRoute("/")({
 });
 
 const SECTIONS = [
-  "daynight", "inside", "ages", "app", "setup",
+  "app", "setup",
   "accessories", "lifestyle", "compare", "privacy", "pricing", "covered", "faq",
 ];
 
@@ -47,6 +50,9 @@ function Index() {
         <Hero />
         <Statement />
         <Features />
+        <DayNight />
+        <Inside />
+        <Ages />
         {SECTIONS.map((id, i) => (
           <section
             key={id}
@@ -54,7 +60,7 @@ function Index() {
             className={`section-pad border-b border-hairline ${id === "daynight" ? "bg-midnight" : ""}`}
           >
             <div className="container-page">
-              <Eyebrow number={String(i + 4).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
+              <Eyebrow number={String(i + 7).padStart(2, "0")} className={id === "daynight" ? "text-glow" : ""}>
                 {id}
               </Eyebrow>
             </div>
