@@ -43,7 +43,7 @@ export function StickyBar() {
           transition={{ duration: reduce ? 0 : 0.6, ease: EASE }}
         >
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2.5 md:flex md:gap-2">
-            <div className="flex min-w-0 items-center gap-2.5">
+            <div className="flex min-w-0 items-center gap-2.5 md:shrink-0">
               <img src="/assets/02-hero-three-quarter.png" alt="" className="h-10 w-10 shrink-0 rounded-[10px] bg-linen object-cover" loading="lazy" />
               <span className="truncate text-[15px] md:shrink-0 md:text-[14px] font-[550] text-ink">Bear Mini-Mum</span>
             </div>
@@ -57,7 +57,7 @@ export function StickyBar() {
                   role="radio"
                   aria-checked={sel === p.id}
                   onClick={() => setSel(p.id)}
-                  className={`h-9 shrink-0 whitespace-nowrap rounded-full px-3 text-[13px] md:h-8 md:px-2.5 md:text-[12px] transition-colors duration-500 ${sel === p.id ? "bg-cocoa text-cream" : "border border-hairline text-ink"}`}
+                  className={`h-9 shrink-0 whitespace-nowrap rounded-full px-2.5 text-[12px] md:h-8 transition-colors duration-500 ${sel === p.id ? "bg-cocoa text-cream" : "border border-hairline text-ink"}`}
                 >
                   {p.name} ${p.price}
                 </button>
