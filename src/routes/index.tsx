@@ -26,7 +26,7 @@ import { getRequestOrigin } from "@/lib/origin.functions";
 export const Route = createFileRoute("/")({
   loader: async () => ({ origin: await getRequestOrigin() }),
   head: ({ loaderData }) => {
-    const img = loaderData ? `${loaderData.origin}/assets/white/w-02-hero-three-quarter.png` : undefined;
+    const img = "https://bear-bloom-home-monitor.lovable.app/assets/white/w-02-hero-three-quarter-share.jpg";
     return {
       meta: [
         { title: "Bear Mini-Mum · The baby monitor that grows up with them" },
