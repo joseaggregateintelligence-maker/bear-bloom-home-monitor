@@ -160,5 +160,5 @@
 .marquee-track { animation: marquee 50s linear infinite; }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } }
 
-.footer-wordmark { font-size: min(14vw, 158px); letter-spacing: 0; }
+.footer-wordmark { font-size: min(13vw, 158px); letter-spacing: 0; }
 @media (width >= 768px) { .footer-wordmark { font-size: min(12vw, 158px); } }
