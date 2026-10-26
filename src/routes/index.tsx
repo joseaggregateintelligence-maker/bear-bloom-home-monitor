@@ -13,6 +13,8 @@ import { Setup } from "@/components/site/Setup";
 import { Accessories } from "@/components/site/Accessories";
 import { Lifestyle } from "@/components/site/Lifestyle";
 import { Compare } from "@/components/site/Compare";
+import { Testimonials } from "@/components/site/Testimonials";
+import { UsMap } from "@/components/site/UsMap";
 import { Privacy } from "@/components/site/Privacy";
 import { InTheBox } from "@/components/site/InTheBox";
 import { LifestyleBand } from "@/components/site/LifestyleBand";
@@ -30,9 +32,9 @@ export const Route = createFileRoute("/")({
     return {
       meta: [
         { title: "Bear Mini-Mum · The baby monitor that grows up with them" },
-        { name: "description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert free for life." },
+        { name: "description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert included, no subscription needed." },
         { property: "og:title", content: "Bear Mini-Mum · The baby monitor that grows up with them" },
-        { property: "og:description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert free for life." },
+        { property: "og:description", content: "A small bear-shaped baby monitor for ages 0–3. 2.5K night vision, on-device AI, every safety alert included, no subscription needed." },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
         ...(img ? [{ property: "og:image", content: img }, { name: "twitter:image", content: img }] : []),
@@ -71,6 +73,8 @@ function Index() {
         <Setup />
         <Accessories />
         <Lifestyle />
+        <Testimonials />
+        <UsMap />
         <Compare />
         <Privacy />
         <InTheBox />
