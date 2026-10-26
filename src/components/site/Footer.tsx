@@ -61,7 +61,7 @@ export function Footer() {
       </div>
       <p
         aria-hidden
-        className="footer-wordmark pointer-events-none mt-8 select-none whitespace-nowrap text-center font-semibold leading-[1.15] text-cream/[0.06]"
+        className="footer-wordmark pointer-events-none mt-8 select-none whitespace-nowrap text-center font-semibold leading-[1.15] text-cream/[0.12]"
         
       >
         Bear Mini-Mum

@@ -7,6 +7,7 @@ export const NAV_LINKS = [
   { label: "How it works", id: "features" },
   { label: "Ages", id: "ages" },
   { label: "App", id: "app" },
+  { label: "Reviews", id: "testimonials" },
   { label: "Compare", id: "compare" },
   { label: "Pricing", id: "pricing" },
   { label: "FAQ", id: "faq" },
