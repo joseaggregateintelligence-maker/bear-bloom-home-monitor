@@ -12,21 +12,21 @@ const FEATURES = [
   },
   {
     n: "02", title: "Alerts you can trust",
-    heading: "One alert. When it matters.",
-    lead: "Safety alerts only fire when two signals agree: the camera and the optional breathing pad. Everything else waits quietly for the morning.",
-    data: "FACE COVERED · ROLLED OVER · BREATHING MOTION · CRYING · CLIMBING",
+    heading: "Every alert means something.",
+    lead: "Urgent alerts are double-checked before they wake you, and sound even on silent. Crying and waking get a gentle nudge. Everything else waits in your morning summary.",
+    data: "URGENT · DOUBLE-CHECKED   EVERYDAY · GENTLE   THE REST · MORNING SUMMARY",
   },
   {
-    n: "03", title: "Private by default",
-    heading: "Video stays home.",
-    lead: "The AI runs inside the bear and records to 64 GB on board. Cloud backup is your choice, end-to-end encrypted, never required.",
-    data: "ON-DEVICE AI · 64 GB LOCAL · E2E ENCRYPTED · NO ADS, EVER",
+    n: "03", title: "Private by design",
+    heading: "Smart inside. Private by default.",
+    lead: "Bear Mini-Mum’s AI works inside the bear and records to 64 GB on board, so your videos stay at home. Watch live from anywhere over an end-to-end encrypted connection.",
+    data: "ON-DEVICE AI · 64 GB ON THE BEAR · END-TO-END ENCRYPTED · NO ADS, EVER",
   },
   {
-    n: "04", title: "No safety paywall",
-    heading: "Every safety alert, free for life.",
-    lead: "No subscription needed to keep your child safe. An optional plan adds long cloud history and trends, nothing more.",
-    data: "$0 FOR SAFETY · OPTIONAL PLUS $4.99/MO",
+    n: "04", title: "Safety, always included",
+    heading: "Safety is free. Plus makes it more.",
+    lead: "Every safety alert, live view, talk and on-board recording works with no subscription. Bear Mini-Mum Plus adds 30 days of cloud video, sleep insights, a pediatrician report and highlight reels.",
+    data: "SAFETY INCLUDED · PLUS $5.99/MO · FIRST 3 MONTHS FREE",
   },
 ];
 
@@ -58,15 +58,16 @@ function Block({ f, onActive }: { f: (typeof FEATURES)[number]; onActive: () => 
 export function Features() {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
-  const cur = FEATURES[active]!;
+  const cur = FEATURES[active] ?? FEATURES[0];
+  if (!cur) return null;
   return (
     <section id="features" className="bg-cream pb-[88px] md:pb-0">
       <div className="container-page grid gap-0 md:grid-cols-2 md:gap-16">
         <div className="md:order-2">
           <div className="pt-[88px] md:sticky md:top-0 motion-reduce:md:static md:flex md:h-screen md:items-center md:pt-0">
-            <div className="relative flex w-full items-center justify-center overflow-hidden rounded-[28px] bg-linen md:h-[min(720px,86vh)]">
+            <div className="relative flex w-full items-center justify-center overflow-hidden rounded-[28px] bg-product-white md:h-[min(720px,86vh)]">
               <img
-                src="/assets/01-hero-front.png"
+                src="/assets/white/w-01-hero-front.png"
                 alt="Bear Mini-Mum baby monitor, front view"
                 className="h-[380px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_65%,transparent_100%)] md:h-[min(620px,76vh)]"
               />

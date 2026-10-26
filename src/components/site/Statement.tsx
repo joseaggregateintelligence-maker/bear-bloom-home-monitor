@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
-const QUIET = "Most baby monitors do too much. Too many alerts, too many apps, too many subscriptions. And still you get up to check.";
+const QUIET = "Most baby monitors do too much. Too many alerts, too many apps, too many false alarms. And still you get up to check.";
 const LOUD = "Bear minimum design. Maximum care.";
 
 function Word({ word, progress, range, strong }: { word: string; progress: MotionValue<number>; range: [number, number]; strong: boolean }) {

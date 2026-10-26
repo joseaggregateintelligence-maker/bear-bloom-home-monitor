@@ -30,7 +30,8 @@
   --color-cocoa: #5B4739;
   --color-midnight: #1C1A22;
   --color-glow: #F3D9AE;
-  --color-watermark: #D8C9B3;
+  --color-watermark: #EFE9E0;
+  --color-product-white: #FAF8F5;
   --color-hairline: rgba(43,33,27,0.10);
   --ease-premium: cubic-bezier(.16,1,.3,1);
   --radius-sm: calc(var(--radius) - 4px);
@@ -158,3 +159,6 @@
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee-track { animation: marquee 50s linear infinite; }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } }
+
+.footer-wordmark { font-size: min(13vw, 158px); letter-spacing: 0; }
+@media (width >= 768px) { .footer-wordmark { font-size: min(12vw, 158px); } }

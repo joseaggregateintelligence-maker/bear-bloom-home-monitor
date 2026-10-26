@@ -3,7 +3,8 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Button, EASE, Reveal } from "./primitives";
 
 const QA = [
-  ["Do I need a subscription?", "No. Every safety alert, live view, talk and 64 GB of local recording are free for life. Plus is optional, for long cloud history and trends."],
+  ["Do I need a subscription?", "No. Every safety alert, live view, talk and on-board recording work without one. Bear Mini-Mum Plus is optional: $5.99 a month for cloud video backup, sleep insights, a pediatrician report and highlight reels. Your first 3 months are free."],
+  ["Where are my videos stored?", "On the bear itself, on 64 GB of built-in storage. Live viewing from your phone is end-to-end encrypted. Videos go to the cloud only if you turn on Plus cloud backup."],
   ["Does it work if our WiFi goes down?", "Yes. It keeps recording on the bear, and your phone connects to it directly over your home network or Bluetooth."],
   ["Is it safe to put near the cot?", "It always sits outside the cot and out of reach, with the cable hidden inside the Arc mount or wall plate. We design to ASTM F2951, the US baby monitor safety standard."],
   ["Does it prevent SIDS?", "No monitor can, and we never claim to. Bear Mini-Mum helps you keep watch; safe sleep practices are what lower the risk."],

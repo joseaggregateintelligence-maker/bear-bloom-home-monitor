@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Button, EASE } from "./primitives";
 import { scrollToId } from "./Nav";
-import { PLANS } from "./Pricing";
+import { PLANS } from "./product-plans";
 
 export function StickyBar() {
   const [show, setShow] = useState(false);
@@ -28,7 +28,7 @@ export function StickyBar() {
     return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
   }, []);
 
-  const plan = PLANS.find((p) => p.id === sel)!;
+  const plan = PLANS.find((p) => p.id === sel) ?? PLANS[0];
 
   return (
     <AnimatePresence>
@@ -36,21 +36,21 @@ export function StickyBar() {
         <motion.div
           role="region"
           aria-label="Quick order"
-          className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-[600px] lg:max-w-[680px] rounded-[16px] border border-hairline bg-card-warm p-2.5 md:bottom-4"
+          className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-[600px] lg:max-w-[960px] rounded-[16px] border border-hairline bg-card-warm p-2.5 md:bottom-4"
           initial={reduce ? { opacity: 0 } : { y: 120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={reduce ? { opacity: 0 } : { y: 120, opacity: 0 }}
           transition={{ duration: reduce ? 0 : 0.6, ease: EASE }}
         >
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2.5 md:flex md:gap-2">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2.5 lg:flex lg:gap-2">
             <div className="flex min-w-0 items-center gap-2.5 md:shrink-0">
-              <img src="/assets/02-hero-three-quarter.png" alt="" className="h-10 w-10 shrink-0 rounded-[10px] bg-linen object-cover" loading="lazy" />
+              <img src="/assets/white/w-02-hero-three-quarter.png" alt="" className="h-10 w-10 shrink-0 rounded-[10px] bg-product-white object-cover" loading="lazy" />
               <span className="truncate text-[15px] md:shrink-0 md:text-[14px] font-[550] text-ink">Bear Mini-Mum</span>
             </div>
-            <Button className="h-10 whitespace-nowrap px-4 md:order-last" onClick={() => scrollToId("pricing")}>
+            <Button className="h-10 whitespace-nowrap px-4 lg:order-last" onClick={() => scrollToId("pricing")}>
               Order · ${plan.price}
             </Button>
-            <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] md:ml-auto md:shrink-0 md:overflow-visible">
+            <div role="radiogroup" aria-label="Choose a set" className="col-span-2 flex gap-1 overflow-x-auto [scrollbar-width:none] lg:ml-auto lg:shrink-0 lg:overflow-visible">
               {PLANS.map((p) => (
                 <button
                   key={p.id}

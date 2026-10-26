@@ -2,7 +2,7 @@ import { Reveal, SectionHeading } from "./primitives";
 
 const COLS = ["Bear Mini-Mum", "Non-WiFi camera", "AI WiFi camera", "Wearable sock monitor"];
 const ROWS: [string, string, string, string, string][] = [
-  ["Smart safety alerts", "Free for life", "None", "Paid after year one", "Vitals only"],
+  ["Smart safety alerts", "Included, no subscription", "None", "Paid after year one", "Vitals only"],
   ["Works if the WiFi drops", "✓ local mode", "✓", "—", "—"],
   ["Nothing worn by the baby", "✓", "✓", "✓", "— sock"],
   ["Video kept at home by default", "✓", "✓", "— cloud", "— cloud"],

@@ -3,14 +3,14 @@ import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer
 import { EASE, Reveal, SectionHeading } from "./primitives";
 
 const STEPS = [
-  { n: "Step 01", title: "Mount it", text: "Arc on the cot, plate on the wall, or simply a shelf. Magnetic, one click.", img: "/assets/15b-wall-plate-with-bear.png" },
+  { n: "Step 01", title: "Mount it", text: "Arc on the cot, plate on the wall, or simply a shelf. Magnetic, one click.", img: "/assets/white/w-15b-wall-plate-with-bear.png" },
   { n: "Step 02", title: "Pair it", text: "Scan the code, name the room. Two minutes.", img: "/assets/app-01-home-live.png" },
-  { n: "Step 03", title: "Sleep", text: "Close the door. It takes the night from here.", img: "/assets/02-hero-three-quarter.png" },
+  { n: "Step 03", title: "Sleep", text: "Close the door. It takes the night from here.", img: "/assets/white/w-02-hero-three-quarter.png" },
 ];
 
 function Card({ s, className }: { s: (typeof STEPS)[number]; className?: string | undefined }) {
   return (
-    <div className={"relative h-full w-full overflow-hidden rounded-[28px] bg-linen " + (className ?? "")}>
+    <div className={"relative h-full w-full overflow-hidden rounded-[28px] bg-product-white " + (className ?? "")}>
       {s.img.includes("/app-") ? (
         <div className="absolute left-1/2 top-10 w-[200px] -translate-x-1/2 rounded-[40px] bg-ink p-2">
           <img src={s.img} alt={s.title} className="w-full rounded-[32px]" loading="lazy" />

@@ -14,6 +14,8 @@ import { Accessories } from "@/components/site/Accessories";
 import { Lifestyle } from "@/components/site/Lifestyle";
 import { Compare } from "@/components/site/Compare";
 import { Privacy } from "@/components/site/Privacy";
+import { InTheBox } from "@/components/site/InTheBox";
+import { LifestyleBand } from "@/components/site/LifestyleBand";
 import { Pricing } from "@/components/site/Pricing";
 import { Covered } from "@/components/site/Covered";
 import { Faq } from "@/components/site/Faq";
@@ -24,7 +26,7 @@ import { getRequestOrigin } from "@/lib/origin.functions";
 export const Route = createFileRoute("/")({
   loader: async () => ({ origin: await getRequestOrigin() }),
   head: ({ loaderData }) => {
-    const img = loaderData ? `${loaderData.origin}/assets/og-image.jpg` : undefined;
+    const img = "https://bear-bloom-home-monitor.lovable.app/assets/white/w-02-hero-three-quarter-share.jpg";
     return {
       meta: [
         { title: "Bear Mini-Mum · The baby monitor that grows up with them" },
@@ -60,6 +62,7 @@ function Index() {
       <main>
         <Hero />
         <Statement />
+        <LifestyleBand />
         <Features />
         <DayNight />
         <Inside />
@@ -70,6 +73,7 @@ function Index() {
         <Lifestyle />
         <Compare />
         <Privacy />
+        <InTheBox />
         <Pricing />
         <Covered />
         <Faq />

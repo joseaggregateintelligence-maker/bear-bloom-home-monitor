@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { SectionHeading } from "./primitives";
 
 const ITEMS = [
-  { name: "Arc mount", price: "$49", text: "Wraps any cot rail. Tilt to any angle.", img: "/assets/14-accessory-arc-mount.png" },
-  { name: "Wall plate", price: "Included", text: "Magnetic, with tilt, for a room-wide view.", img: "/assets/15b-wall-plate-with-bear.png" },
-  { name: "Floor stand", price: "$69", text: "An overhead view where clamping isn’t possible.", img: "/assets/16-accessory-floor-stand.png" },
-  { name: "Breathing pad", price: "$99", text: "The second signal for breathing alerts.", img: "/assets/17-accessory-breathing-pad.png" },
-  { name: "Travel pouch", price: "$29", text: "For Grandma’s house and holidays.", img: "/assets/18-accessory-travel-pouch.png" },
-  { name: "Size", price: "11 cm", text: "About the height of a coffee mug.", img: "/assets/08-scale-with-books.png" },
+  { name: "Arc mount", price: "$49", text: "Wraps any cot rail. Tilt to any angle.", img: "/assets/white/w-14-accessory-arc-mount.png" },
+  { name: "Wall plate", price: "Included", text: "Magnetic, with tilt, for a room-wide view.", img: "/assets/white/w-15b-wall-plate-with-bear.png" },
+  { name: "Floor stand", price: "$69", text: "An overhead view where clamping isn’t possible.", img: "/assets/white/w-16-accessory-floor-stand.png" },
+  { name: "Breathing pad", price: "$99", text: "The second signal for breathing alerts.", img: "/assets/white/w-17-accessory-breathing-pad.png" },
+  { name: "Travel pouch", price: "$29", text: "For Grandma’s house and holidays.", img: "/assets/white/w-18-accessory-travel-pouch.png" },
+  { name: "Size", price: "11 cm", text: "About the height of a coffee mug.", img: "/assets/white/w-08-scale-with-books.png" },
 ];
 
 export function Accessories() {
@@ -45,10 +45,10 @@ export function Accessories() {
         {ITEMS.map((it) => (
           <article
             key={it.name}
-            className="flex h-[460px] w-[82vw] max-w-[440px] shrink-0 snap-start flex-col overflow-hidden rounded-[24px] bg-linen select-none md:h-[520px] md:w-[440px]"
+            className="flex h-[460px] w-[82vw] max-w-[440px] shrink-0 snap-start flex-col overflow-hidden rounded-[24px] bg-product-white select-none md:h-[520px] md:w-[440px]"
           >
             <div className="relative flex-1">
-              <img src={it.img} alt={it.name} draggable={false} className="absolute inset-0 h-full w-full object-cover mix-blend-multiply" loading="lazy" />
+              <img src={it.img} alt={it.name} draggable={false} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
             </div>
             <div className="border-t border-hairline p-6">
               <div className="flex items-baseline justify-between gap-4">

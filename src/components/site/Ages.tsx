@@ -6,17 +6,17 @@ const STAGES = [
   {
     age: "0–1 years", title: "Watching every breath",
     text: "Mounted on the Arc above the cot. Breathing motion, face-covered and rollover alerts, confirmed twice.",
-    img: "/assets/06-arc-mount-cot.png", alt: "Bear Mini-Mum on the Arc mount above an empty cot",
+    img: "/assets/white/w-06-arc-mount-cot.png", alt: "Bear Mini-Mum on the Arc mount above an empty cot",
   },
   {
     age: "1–2 years", title: "Standing, climbing, waking",
     text: "On the wall. Alerts for crying, waking and climbing, with nothing glowing towards your child.",
-    img: "/assets/02-hero-three-quarter.png", alt: "Bear Mini-Mum, three-quarter view",
+    img: "/assets/white/w-02-hero-three-quarter.png", alt: "Bear Mini-Mum, three-quarter view",
   },
   {
     age: "2–3 years", title: "A hug, sent",
     text: "On the shelf, turning to follow them. Squeeze its ears to send you a hug; it plays your voice back.",
-    img: "/assets/04-send-a-hug.png", alt: "Squeezing Bear Mini-Mum's ears to send a hug",
+    img: "/assets/white/w-04-send-a-hug.png", alt: "Squeezing Bear Mini-Mum's ears to send a hug",
   },
 ];
 
@@ -52,7 +52,8 @@ function Step({ s, onActive }: { s: (typeof STAGES)[number]; onActive: () => voi
 export function Ages() {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
-  const cur = STAGES[active]!;
+  const cur = STAGES[active] ?? STAGES[0];
+  if (!cur) return null;
   const heading = (
     <>
       <Eyebrow>One monitor, birth to three</Eyebrow>
@@ -65,7 +66,7 @@ export function Ages() {
       <div className="container-page hidden grid-cols-[1.15fr_1fr] gap-16 md:grid">
         <div className="sticky top-0 motion-reduce:static flex h-screen flex-col justify-center pt-24 pb-10">
           {heading}
-          <div className="relative mt-10 aspect-[10/7] w-full overflow-hidden rounded-[28px] bg-linen">
+          <div className="relative mt-10 aspect-[10/7] w-full overflow-hidden rounded-[28px] bg-product-white">
             <AnimatePresence initial={false}>
               <motion.img
                 key={cur.img}
