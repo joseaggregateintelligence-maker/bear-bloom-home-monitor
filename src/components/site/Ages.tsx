@@ -53,6 +53,7 @@ export function Ages() {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
   const cur = STAGES[active] ?? STAGES[0];
+  if (!cur) return null;
   const heading = (
     <>
       <Eyebrow>One monitor, birth to three</Eyebrow>

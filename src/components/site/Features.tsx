@@ -59,6 +59,7 @@ export function Features() {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
   const cur = FEATURES[active] ?? FEATURES[0];
+  if (!cur) return null;
   return (
     <section id="features" className="bg-cream pb-[88px] md:pb-0">
       <div className="container-page grid gap-0 md:grid-cols-2 md:gap-16">
