@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const MODES = {
   day: {
     label: "Day",
-    img: "/assets/02-hero-three-quarter.png",
+    img: "/assets/white/w-02-hero-three-quarter.png",
     alt: "Bear Mini-Mum in daylight",
     text: "Soft lights in the visor show when you’re listening. The bear turns 360° to follow your toddler.",
   },
@@ -46,7 +46,7 @@ export function DayNight() {
           style={reduce ? { borderRadius: 28 } : { clipPath: clip }}
           className={cn(
             "relative mt-14 aspect-[4/5] w-full overflow-hidden rounded-[28px] transition-colors duration-700 md:aspect-[1320/720]",
-            night ? "bg-midnight" : "bg-linen",
+            night ? "bg-midnight" : "bg-product-white",
           )}
         >
           <AnimatePresence initial={false}>

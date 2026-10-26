@@ -1,7 +1,7 @@
 import { Eyebrow, Reveal } from "./primitives";
 
 const STATS = [
-  ["0", "seconds of video sent to the cloud by default"],
+  ["0", "videos uploaded, unless you turn on cloud backup"],
   ["64 GB", "of recording, kept on the bear"],
   ["E2E", "encryption for remote viewing and backup"],
   ["2×", "signals confirm every safety alert"],
@@ -14,7 +14,7 @@ export function Privacy() {
     <section id="privacy" className="section-pad bg-midnight text-cream">
       <div className="container-page grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <Reveal>
-          <img src="/assets/05-visor-close-up.png" alt="Close-up of the cocoa camera visor" className="w-full rounded-[28px]" loading="lazy" />
+          <img src="/assets/lifestyle/3am-glance.jpg" alt="The 3am glance: a mother checking her phone at night" className="aspect-square w-full rounded-[28px] object-cover" loading="lazy" />
         </Reveal>
         <div>
           <Reveal>

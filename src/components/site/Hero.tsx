@@ -26,8 +26,7 @@ export function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-linen"
-      style={{ backgroundImage: "radial-gradient(ellipse 55% 50% at 50% 50%, rgba(255,253,249,0.75), transparent 70%)" }}
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-product-white"
     >
       {/* Spec strip */}
       <motion.div
@@ -62,8 +61,8 @@ export function Hero() {
         </motion.div>
         <motion.div style={reduce ? {} : { scale: productScale }} className="relative">
           <motion.video
-            src="/assets/09-turntable-360.mp4"
-            poster="/assets/02-hero-three-quarter.png"
+            src="/assets/white/w-09-turntable-360.mp4"
+            poster="/assets/white/w-02-hero-three-quarter.png"
             autoPlay
             muted
             loop
@@ -71,7 +70,7 @@ export function Hero() {
             preload="metadata"
             ref={videoRef}
             aria-label="Bear Mini-Mum baby monitor turning 360 degrees"
-            className="h-[360px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)] md:h-[560px]"
+            className="h-[360px] w-auto mix-blend-multiply [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)] md:h-[600px]"
             initial={init({ y: "7%", scale: 0.94, opacity: 0 })}
             animate={{ y: "0%", scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: EASE, delay: 0.2 }}
@@ -89,7 +88,7 @@ export function Hero() {
         <div>
           <Eyebrow>Bear Mini-Mum</Eyebrow>
           <h1 className="mt-3 text-[30px] font-[520] leading-[1.05] tracking-[-0.035em] text-ink md:text-[40px]">
-            Sleep. We’ve got the night.
+            “Small bear. Big peace of mind.”
           </h1>
         </div>
         <div className="flex flex-col gap-4 md:items-end">

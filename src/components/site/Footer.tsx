@@ -11,7 +11,7 @@ const COLS = [
 export function Footer() {
   const [done, setDone] = useState(false);
   return (
-    <footer id="footer" className="relative overflow-hidden bg-midnight text-cream">
+    <footer id="footer" className="relative bg-midnight pb-12 text-cream">
       <div className="container-page pt-[88px] md:pt-[160px]">
         <div className="max-w-3xl">
           <Eyebrow className="text-glow">Bedtime notes</Eyebrow>
@@ -61,8 +61,8 @@ export function Footer() {
       </div>
       <p
         aria-hidden
-        className="pointer-events-none mt-8 select-none whitespace-nowrap text-center font-semibold leading-[0.78] tracking-[-0.06em] text-cream/[0.06]"
-        style={{ fontSize: "17vw", marginBottom: "-4vw" }}
+        className="footer-wordmark pointer-events-none mt-8 select-none whitespace-nowrap text-center font-semibold leading-[1.15] text-cream/[0.06]"
+        
       >
         Bear Mini-Mum
       </p>
